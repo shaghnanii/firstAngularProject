@@ -1,2 +1,17 @@
-<h3>HEROES</h3>
-<p>Get your heroes here</p>
+<div class="w-full grid grid-cols-3">
+  <div *ngFor="let hero of heroes">
+    <div class="max-w-sm rounded overflow-hidden shadow-lg">
+      <div class="px-6 py-4">
+        <div class="font-bold text-xl">{{ hero.firstName }} {{ hero.lastName }}</div>
+        <div class="font-xs mb-2">{{ hero.email }}</div>
+        <div class="text-gray-700 text-base">
+          <p class="font-bold text-sm mb-3">{{ hero.address }}</p>
+          {{ hero.bio }}
+        </div>
+      </div>
+      <div class="px-6 pt-4 pb-2">
+        <span *ngFor="let tag of hero.tags" class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">{{ tag }}</span>
+      </div>
+    </div>
+  </div>
+</div>
